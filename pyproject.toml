@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pyupi"
+version = "0.1.0"
+description = ""
+authors = ["PeterMasaryk <masaryk.peter00@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlmodel = "^0.0.22"
+psycopg2-binary = "^2.9.10"
+fastapi = {extras = ["standard"], version = "^0.115.6"}
+alembic = "^1.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
