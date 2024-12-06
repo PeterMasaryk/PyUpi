@@ -13,4 +13,4 @@ class UserModel(SQLModel, table=True):
     id: str = Field(primary_key=True)
     username: str = Field(index=True)
     email: str | None = Field(default=None, index=True)
-    star_sign: str
+    star_sign: str | None
