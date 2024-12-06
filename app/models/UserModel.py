@@ -1,7 +1,7 @@
 from sqlmodel import Field, SQLModel
 
-class UserModel(SQLModel, table=True):
 
+class UserModel(SQLModel, table=True):
     __tablename__ = "users"
 
     def __init__(self, id, username, email, star_sign):
