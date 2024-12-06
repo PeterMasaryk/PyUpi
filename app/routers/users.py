@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from sqlmodel import select
 from app.contracts.UserRequest import UserRequest
 from app.models.UserModel import UserModel
-from ..dependencies import SessionDep
+from app.dependencies import SessionDep
 from uuid import uuid4
 
 router = APIRouter(

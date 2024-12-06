@@ -1,8 +1,12 @@
 from sqlmodel import Session, SQLModel, create_engine
 from typing import Annotated
 from fastapi import Depends
+import os
+from dotenv import load_dotenv
 
-db_url = 'postgresql://postgres:postgres@localhost:5432/fastapi'
+load_dotenv()
+
+db_url = os.environ["DATABASE_URL"]
 engine = create_engine(db_url)
 
 def create_db_and_tables():
