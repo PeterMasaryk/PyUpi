@@ -1,7 +1,9 @@
 services:
   web:
     build: .
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; ./container/.venv/bin/fastapi run --workers 4 container/app/main.py'
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done;
+     ./container/.venv/bin/alembic -c "./container/alembic_docker.ini" upgrade head;
+     ./container/.venv/bin/fastapi run --workers 4 container/app/main.py'
     volumes:
       - .:/app
     ports:

@@ -14,7 +14,9 @@ router = APIRouter(
 
 @router.post("/", status_code=201)
 def create_user(request: UserRequest, session: SessionDep) -> str:
-    user = UserModel(str(uuid4()), request.username, request.email)
+    user = UserModel(
+        id=str(uuid4()), username=request.username, email=request.email, star_sign=None
+    )
     session.add(user)
     session.commit()
     session.refresh(user)
